@@ -2,7 +2,9 @@ zumy:
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50 
+
   zumy_controller:
+
     type: "diff_drive_controller/DiffDriveController"
     left_wheel: 'wheel_left_joint'
     right_wheel: 'wheel_right_joint'
