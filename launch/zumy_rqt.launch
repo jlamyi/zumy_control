@@ -1,0 +1,8 @@
+<!-- zumy rqt launch file-->
+<launch>
+
+  <!-- Load RQT with a pre-setup GUI for Baxter controls from a perspective file  -->
+  <node name="zumy_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
+	output="screen" args="--perspective-file $(find zumy_control)/launch/zumy_rqt.perspective"/>
+  
+</launch>

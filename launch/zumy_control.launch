@@ -1,0 +1,23 @@
+<!--zumy_control launch file-->
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find zumy_control)/config/zumy_control.yaml" command="load"/>
+
+  <!-- load zumy.urdf to parameter server-->
+  <!--param name="robot_description" textfile="$(find zumy_description)/urdf/zumy.xacro"/-->
+
+  <!-- load the controllers -->
+  <!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/zumy" args="zumy_controller joint_state_controller"/-->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="zumy_controller joint_state_controller"/>
+
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+    <remap from="/joint_states" to="/zumy/joint_states" />
+  </node>
+
+</launch>
