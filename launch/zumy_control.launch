@@ -18,7 +18,11 @@
 
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+<<<<<<< HEAD:launch/zumy_control.launch
         respawn="false" output="screen">
+=======
+    respawn="false" output="screen">
+>>>>>>> 4a7b75eeb191aebfe54caa46fae80ef5e1306319:launch/zumy_control.launch
     <remap from="/joint_states" to="/zumy/joint_states" />
   </node>
 
