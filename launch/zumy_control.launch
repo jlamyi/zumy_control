@@ -10,6 +10,8 @@
   <!-- load the controllers -->
   <!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" ns="/zumy" args="zumy_controller joint_state_controller"/-->
+
+  <!-- load the controllers avoiding namespace-->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" args="zumy_controller joint_state_controller"/>
 
